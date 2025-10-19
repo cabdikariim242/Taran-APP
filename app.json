@@ -4,7 +4,7 @@
     "slug": "taran-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/profile.png",
+    "icon": "./assets/taranApp.jpeg",
     "scheme": "taranapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -14,16 +14,16 @@
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/profile.png",
-        "backgroundImage": "./assets/profile.png",
-        "monochromeImage": "./assets/profile.png"
+        "foregroundImage": "./assets/taranApp.jpeg",
+        "backgroundImage": "./assets/taranApp.jpeg",
+        "monochromeImage": "./assets/taranApp.jpeg"
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false
     },
     "web": {
       "output": "static",
-      "favicon": "./assets/profile.png"
+      "favicon": "./assets/taranApp.jpeg"
     },
     "plugins": [
       "expo-router",
