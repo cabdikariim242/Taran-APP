@@ -3,8 +3,8 @@ import React from 'react'
 
 export default function kyc() {
   return (
-    <View>
-      <Text>kyc</Text>
+     <View className="flex-1 justify-center items-center "> 
+      <Text  className=" font-bold text-md text-center text-red-300">KYC</Text>
     </View>
   )
 }

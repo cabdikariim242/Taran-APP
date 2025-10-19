@@ -20,9 +20,9 @@ const Background = ({icon,focused,title,}:any) =>{
   )
 }else{
   return(
-    <View className="flex-col gap-4 justify-center items-center"> 
-      <Image source={icon} tintColor="#0c4d7b69"/>
-       <Text className="text-[8px] font-[600] text-[#0C4C7B]/20 capitalize">{title}</Text>
+    <View className="flex-col gap-2justify-center items-center"> 
+      <Image source={icon} tintColor="#0c4d7b69" className="w-[20px] h-[20px]"/>
+       <Text className="text-[8px] font-[600] text-[#0C4C7B]/70 capitalize">{title}</Text>
     </View>
   )
 }
