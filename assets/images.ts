@@ -6,7 +6,8 @@ import kyc from '@/assets/kyc.png';
 import support from '@/assets/support.png';
 import transactions from '@/assets/transactions.png'
 import bg from '@/assets/bg.png'
-
+import Award from './award taran Swap-01 1.png'
+import swapIcon from './swapIcon.png'
 export const images = {
   profile,
   notification,
@@ -16,5 +17,6 @@ export const images = {
   support,
   transactions,
   bg,
-
+  Award,
+  swapIcon,
 };
