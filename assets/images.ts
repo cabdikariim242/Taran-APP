@@ -22,6 +22,12 @@ import Goverment from './goverment.png'
 import Face from './face.png'
 import Resident from './resident.png'
 import Certification from './certification.png'
+import suppport from  './suppport.png'
+import CallCenter from './CallCenter.png'
+import calling from './calling.png'
+import whatsapp from './whatsapp.png'
+import Email from './Email.png'
+import Youtube from './Youtube.png'
 export const images = {
   profile,
   notification,
@@ -46,5 +52,11 @@ export const images = {
   Goverment,
   Face,
   Resident,
-  Certification
+  Certification,
+  suppport,
+  CallCenter,
+  calling,
+  whatsapp,
+  Email,
+  Youtube
 };
