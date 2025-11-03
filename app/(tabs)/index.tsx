@@ -1,9 +1,9 @@
-import { images } from "@/assets/images";
-import { Image, Text, View } from "react-native";
+import { images } from "@/assets/images"; 
+import { Image, Pressable, Text, View } from "react-native";
 export default function Index() {
   return (
     //  full content
-    <View className="flex-1 justify-start items-center  bg-white ">
+    <View className="flex-1 justify-start items-center  bg-white  ">
       {/* IMG AND TEXT */}
       <View className="flex flex-row gap-4 mt-4 justify-center items-center w-full max-w-[199px] ">
         <Image source={images.Award} className="w-[46px] h-[60px]" />
@@ -20,33 +20,84 @@ export default function Index() {
       <View className="flex flex-col gap-2 mt-4 relative">
         {/* First Card */}
         <View>
-          <Cards />
+          <Cards title="You Pay" />
         </View>
         {/* MIDDLE IMAGE */}
-        <View className=" " >
-          <Image source={images.swapIcon} className="w-[56px] h-[56px] absolute left-48"  style={{position:'absolute', top:-25, left:150}}/>
+        <View className=" ">
+          <Image
+            source={images.swapIcon}
+            className="w-[56px] h-[56px] absolute left-48"
+            style={{ position: "absolute", top: -25, left: 150 }}
+          />
         </View>
         {/* Second Card */}
         <View>
-          <Cards />
+          <Cards title="You Get" />
         </View>
+      </View>
+      {/* Button */}
+      <View className="w-full max-w-[356px] rounded-[12px] mt-5">
+        <Pressable
+        className="bg-[#0C4C7B] h-[55px] rounded-[12px] flex items-center justify-center"
+        >
+          <Text className="font-[600] text-[15px] text-white text-center">Swap</Text>
+        </Pressable>
+      </View>
+      {/* Swap Amount */}
+      <View className="w-full max-w-[356px] mt-5   bg-[#f3f0f0df] mx-auto rounded-[13px] ">
+        {/* Fist One */}
+        <View className="flex flex-col gap-6 mt-3">
+        <SwapCards title="Swap Amount" total="0.00"/>
+        <Image source={images.BorderBottom} className="w-[356px] h-[2px]" />
+      </View>
+        {/* second One */}
+        <View className="flex flex-col gap-6 mt-3">
+        <SwapCards title="Swap Amount" total="0.00"/>
+        <Image source={images.BorderBottom} className="w-[356px] h-[2px]" />
+      </View>
+        {/* third One */}
+        <View className="flex flex-col gap-6 mt-3">
+        <SwapCards title="Swap Amount" total="0.00"/>
+        <Image source={images.BorderBottom} className="w-[356px] h-[2px]" />
+      </View>
+        {/* fourth One */}
+        <View className="flex flex-col gap-6 my-3">
+        <SwapCards title="Swap Amount" total="0.00"/>
+      </View>
       </View>
     </View>
   );
 }
 
-const Cards = () => {
+interface CardProps {
+  title: string;
+}
+const Cards = ({ title }: CardProps) => {
   return (
     <View className="flex flex-row justify-between items-center w-[356px] px-10 h-[129px] bg-[#0C4C7B1A]  rounded-[20px] ">
       <View className="flex flex-col gap-4">
         <Text className="text-[#0C4C7BE5] text-[12px] font-[400] ">
-          You Pay
+          {title}
         </Text>
         <Text className="text-[#0C4C7BE5] text-[12px] font-[400] ">
           Select Your Country
-        </Text>
+        </Text> 
       </View>
       <Text className="text-[#0C4C7BE5] text-[12px] font-[400] ">0.00</Text>
     </View>
   );
 };
+
+interface SwapProps{
+  title:string,
+  total:string
+}
+
+const SwapCards =({title, total}:SwapProps)=>{
+  return(
+    <View className="w-[308px] mx-auto flex-row justify-between items-center">
+      <Text className="text-[#0C4C7B99] text-[12px] font-[500]">{title}</Text>      
+      <Text className="text-[#0C4C7B] text-[13px] font-[700]">{total}</Text>      
+    </View>
+  )
+}

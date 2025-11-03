@@ -8,6 +8,7 @@ import transactions from '@/assets/transactions.png'
 import bg from '@/assets/bg.png'
 import Award from './award taran Swap-01 1.png'
 import swapIcon from './swapIcon.png'
+import BorderBottom from './Line 26.png'
 export const images = {
   profile,
   notification,
@@ -19,4 +20,6 @@ export const images = {
   bg,
   Award,
   swapIcon,
+  BorderBottom,
+  
 };
