@@ -30,6 +30,10 @@ import Email from './Email.png'
 import Youtube from './Youtube.png'
 import background from './background.png'
 import transactionIcon from './transactionIcon.png'
+import EVC from './EVC+.png'
+import Pbank from './Pbank.png'
+import EVCtoFiat from './EVCtoFiat.png'
+import Ebase from './Ebase.png'
 export const images = {
   profile,
   notification,
@@ -62,5 +66,9 @@ export const images = {
   Email,
   Youtube,
   background,
-  transactionIcon
+  transactionIcon,
+  EVC,
+  Pbank,
+  EVCtoFiat,
+  Ebase,
 };
