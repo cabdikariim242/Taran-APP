@@ -28,6 +28,8 @@ import calling from './calling.png'
 import whatsapp from './whatsapp.png'
 import Email from './Email.png'
 import Youtube from './Youtube.png'
+import background from './background.png'
+import transactionIcon from './transactionIcon.png'
 export const images = {
   profile,
   notification,
@@ -58,5 +60,7 @@ export const images = {
   calling,
   whatsapp,
   Email,
-  Youtube
+  Youtube,
+  background,
+  transactionIcon
 };
