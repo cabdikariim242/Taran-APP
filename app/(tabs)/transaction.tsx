@@ -26,7 +26,7 @@ export default function transaction() {
       </View>
       {/* Cards */}
    <View className="h-[535px] mt-4">
-  <ScrollView>
+  <ScrollView showsVerticalScrollIndicator={false} >
     <View className="gap-4">
       <Cards status="confirming" icon={images.EVC} />
       <Cards status="complete" icon={images.Pbank} />

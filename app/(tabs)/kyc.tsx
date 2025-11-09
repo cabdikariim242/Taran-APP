@@ -32,7 +32,7 @@ export default function accounts() {
       </View>
       {/* Cards */}
       <View className="w-full  ">
-        <ScrollView className="w-full mt-4 flex  h-[560px]">
+        <ScrollView  showsVerticalScrollIndicator={false} className="w-full mt-4 flex  h-[560px]">
  <Cards
           Icon={images.Goverment}
           service="Basic Information"

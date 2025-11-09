@@ -1,7 +1,10 @@
 import { images } from "@/assets/images"; 
+import { useState } from "react";
 import { Image, Pressable, Text, View } from "react-native";
+import Details from '../next/details'
 export default function Index() {
-  return (
+  const [ShowDetails, setShowDetails] = useState(false);
+  return ( 
     //  full content
     <View className="flex-1 justify-start items-center  bg-white  ">
       {/* IMG AND TEXT */}
@@ -37,11 +40,14 @@ export default function Index() {
       </View>
       {/* Button */}
       <View className="w-full max-w-[356px] rounded-[12px] mt-5">
-        <Pressable
+        {ShowDetails ?(<Details />) :
+        (<Pressable
+        onPress={() => setShowDetails(true)}
         className="bg-[#0C4C7B] h-[55px] rounded-[12px] flex items-center justify-center"
         >
           <Text className="font-[600] text-[15px] text-white text-center">Swap</Text>
-        </Pressable>
+        </Pressable>)}
+       
       </View>
       {/* Swap Amount */}
       <View className="w-full max-w-[356px] mt-5   bg-[#f3f0f0df] mx-auto rounded-[13px] ">
