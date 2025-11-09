@@ -1,12 +1,11 @@
 import { images } from "@/assets/images"; 
 import { useState } from "react";
-import { Image, Pressable, Text, View } from "react-native";
-import Details from '../next/details'
+import { Image, Pressable, Text, View, Modal } from "react-native"; 
 export default function Index() {
-  const [ShowDetails, setShowDetails] = useState(false);
+  const [ShowDetails, setShowDetails] = useState(true);
   return ( 
     //  full content
-    <View className="flex-1 justify-start items-center  bg-white  ">
+    <View className="flex-1 relative justify-start items-center  bg-white  ">
       {/* IMG AND TEXT */}
       <View className="flex flex-row gap-4 mt-4 justify-center items-center w-full max-w-[199px] ">
         <Image source={images.Award} className="w-[46px] h-[60px]" />
@@ -40,13 +39,13 @@ export default function Index() {
       </View>
       {/* Button */}
       <View className="w-full max-w-[356px] rounded-[12px] mt-5">
-        {ShowDetails ?(<Details />) :
-        (<Pressable
-        onPress={() => setShowDetails(true)}
+         
+       <Pressable
+        onPress={() => setShowDetails(!ShowDetails)}
         className="bg-[#0C4C7B] h-[55px] rounded-[12px] flex items-center justify-center"
         >
           <Text className="font-[600] text-[15px] text-white text-center">Swap</Text>
-        </Pressable>)}
+        </Pressable> 
        
       </View>
       {/* Swap Amount */}
@@ -71,6 +70,15 @@ export default function Index() {
         <SwapCards title="Swap Amount" total="0.00"/>
       </View>
       </View>
+     <Modal
+      visible={!!ShowDetails}
+      animationType="slide"
+      transparent={true}
+      onRequestClose={()=>setShowDetails(false)}
+      presentationStyle="formSheet"
+      >
+        <Popup/>
+      </Modal>
     </View>
   );
 }
@@ -104,6 +112,16 @@ const SwapCards =({title, total}:SwapProps)=>{
     <View className="w-[308px] mx-auto flex-row justify-between items-center">
       <Text className="text-[#0C4C7B99] text-[12px] font-[500]">{title}</Text>      
       <Text className="text-[#0C4C7B] text-[13px] font-[700]">{total}</Text>      
+    </View>
+  )
+}
+
+
+
+const Popup =()=>{
+  return(
+    <View className="absolute bottom-0 left-0 right-0 h-[290px] bg-white  rounded-[12px]">
+      <Text className="text-[#0C4C7B] text-[18px] font-[600]">Popup Content Here</Text>
     </View>
   )
 }
