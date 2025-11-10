@@ -1,4 +1,6 @@
 import { images } from "@/assets/images";
+import { BlurView } from "expo-blur";
+
 import { useState } from "react";
 import {
   Image,
@@ -89,17 +91,22 @@ export default function Index() {
       >
         <Popup show={ShowDetails} setShow={setShowDetails} />
       </Modal>
-      <Modal
-        visible={ShowAdv}
-        animationType="fade"
-        transparent={true}
-        onRequestClose={() => setShowAdv(false)}
-        presentationStyle="formSheet"
-      >
-        <View className="w-full h-full flex justify-center items-center ">
-          <Advertisement show={ShowAdv} setShow={setShowAdv} />
-        </View>
-      </Modal>
+      <BlurView intensity={30} tint="light" className="absolute inset-0">
+        {" "}
+        <Modal
+          visible={ShowAdv}
+          animationType="fade"
+          transparent={true}
+          onRequestClose={() => setShowAdv(false)}
+          presentationStyle="formSheet"
+        >
+          {" "}
+          <View className="w-full h-full flex justify-center items-center ">
+            {" "}
+            <Advertisement show={ShowAdv} setShow={setShowAdv} />{" "}
+          </View>{" "}
+        </Modal>{" "}
+      </BlurView>
     </View>
   );
 }
@@ -227,14 +234,22 @@ const Advertisement = ({ show, setShow }: ADVProps) => {
       style={{ display: show ? "flex" : "none" }}
       className="flex w-[356px] h-[342px] rounded-[24px]"
     >
-      <View className="flex justify-center items-center  w-full h-full rounded-[24px]   bg-white  shadow ">
-        <Text className="text-[#0C4C7B] text-[17px] font-bold w-[137px] mt-10 mx-auto h-[35px]    ">
+      <View
+        className="flex justify-start items-center gap-4 w-full h-full rounded-[24px]   bg-white border "
+        style={{ borderColor: "#0C4C7B" }}
+      >
+        <Text
+          className="text-[#0C4C7B] text-[16px]  font-bold    mx-auto "
+          style={{ width: 277, marginTop: 10 }}
+        >
           Earn while you are swapping is that make sense to you, try it now by
           using USDC Base
         </Text>
-        <View className="w-[308px] h-[290px]   py-2">
-        <Image source={images.advertisement} className="flex-1 w-full h-full"  />
-
+        <View className=" " style={{ width: 338, height: 270 }}>
+          <Image
+            source={images.advertisement}
+            className="flex-1 w-full h-full"
+          />
         </View>
       </View>
       <Pressable className="mt-4 mx-auto" onPress={() => setShow(false)}>
