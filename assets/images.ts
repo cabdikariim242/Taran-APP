@@ -34,6 +34,8 @@ import EVC from './EVC+.png'
 import Pbank from './Pbank.png'
 import EVCtoFiat from './EVCtoFiat.png'
 import Ebase from './Ebase.png'
+import close from './close.png'
+import stableCoin from './stableCoin.png'
 export const images = {
   profile,
   notification,
@@ -71,4 +73,6 @@ export const images = {
   Pbank,
   EVCtoFiat,
   Ebase,
+  close,
+  stableCoin,
 };
