@@ -10,7 +10,8 @@ import {
   View,
 } from "react-native";
 export default function Index() {
-  const [ShowDetails, setShowDetails] = useState(true);
+  const [ShowDetails, setShowDetails] = useState(false);
+  const [ShowAdv, setShowAdv] = useState(true);
   return (
     //  full content
     <View className="flex-1 relative justify-start items-center  bg-white  ">
@@ -33,9 +34,13 @@ export default function Index() {
           <Cards title="You Pay" />
         </View>
         {/* MIDDLE IMAGE */}
-        <View style={{ borderRadius: 33 }} className="bg-white z-10 flex justify-center items-center rounded-full w-[66px] h-[66px] absolute left-40 top-[96px]">
+        <Pressable
+          style={{ borderRadius: 33 }}
+          className="bg-white z-10 flex justify-center items-center rounded-full w-[66px] h-[66px] absolute left-40 top-[96px]"
+          onPress={() => setShowAdv(!ShowAdv)}
+        >
           <Image source={images.swapIcon} className="w-[56px] h-[56px]" />
-        </View>
+        </Pressable>
 
         {/* Second Card */}
         <View>
@@ -84,6 +89,17 @@ export default function Index() {
       >
         <Popup show={ShowDetails} setShow={setShowDetails} />
       </Modal>
+      <Modal
+        visible={ShowAdv}
+        animationType="fade"
+        transparent={true}
+        onRequestClose={() => setShowAdv(false)}
+        presentationStyle="formSheet"
+      >
+        <View className="w-full h-full flex justify-center items-center ">
+          <Advertisement show={ShowAdv} setShow={setShowAdv} />
+        </View>
+      </Modal>
     </View>
   );
 }
@@ -120,11 +136,6 @@ const SwapCards = ({ title, total }: SwapProps) => {
     </View>
   );
 };
-
-interface PopupProps {
-  show: boolean;
-  setShow: React.Dispatch<React.SetStateAction<boolean>>;
-}
 
 interface PopupProps {
   show: boolean;
@@ -202,6 +213,33 @@ const SCards = ({ Icon, service, user }: SCardProps) => {
           <Text className="font-bold text-[#0C4C7B] text-[16px] ">{user}</Text>
         </View>
       </View>
+    </View>
+  );
+};
+
+interface ADVProps {
+  show: boolean;
+  setShow: React.Dispatch<React.SetStateAction<boolean>>;
+}
+const Advertisement = ({ show, setShow }: ADVProps) => {
+  return (
+    <View
+      style={{ display: show ? "flex" : "none" }}
+      className="flex w-[356px] h-[342px] rounded-[24px]"
+    >
+      <View className="flex justify-center items-center  w-full h-full rounded-[24px]   bg-white  shadow ">
+        <Text className="text-[#0C4C7B] text-[17px] font-bold w-[137px] mt-10 mx-auto h-[35px]    ">
+          Earn while you are swapping is that make sense to you, try it now by
+          using USDC Base
+        </Text>
+        <View className="w-[308px] h-[290px]   py-2">
+        <Image source={images.advertisement} className="flex-1 w-full h-full"  />
+
+        </View>
+      </View>
+      <Pressable className="mt-4 mx-auto" onPress={() => setShow(false)}>
+        <Image source={images.endclose} className="w-[40px] h-[40px]" />
+      </Pressable>
     </View>
   );
 };
