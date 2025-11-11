@@ -27,7 +27,7 @@ export default function accounts() {
       </View>
       {/* Cards */}
       <View className="w-full mt-4">
-        <ScrollView className="w-full h-[560px]">
+        <ScrollView  showsVerticalScrollIndicator={false} className="w-full h-[560px]">
           <Cards
             Icon={images.EVCPULS}
             service="Evc Plus Service"

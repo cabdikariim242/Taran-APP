@@ -22,7 +22,7 @@ const Background = ({ icon, focused, title }: any) => {
             className="w-full max-w-[21px] h-[22px]"
           />
         </ImageBackground>
-        <Text className="     font-[600] text-[#0C4C7B] text-center capitalize" style={{fontSize:11,}}>
+        <Text className="     font-[600] text-[#0C4C7B] text-center capitaline" style={{fontSize:11,}}>
           {title}
         </Text>
       </View>
