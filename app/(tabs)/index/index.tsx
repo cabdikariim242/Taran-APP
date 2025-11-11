@@ -1,6 +1,5 @@
-import { images } from "@/assets/images";
-import { BlurView } from "expo-blur";
-
+import { images } from "@/assets/images"; 
+import { router } from "expo-router";
 import { useState } from "react";
 import {
   Image,
@@ -13,7 +12,7 @@ import {
 } from "react-native";
 export default function Index() {
   const [ShowDetails, setShowDetails] = useState(false);
-  const [ShowAdv, setShowAdv] = useState(true);
+  const [ShowAdv, setShowAdv] = useState(false);
   return (
     //  full content
     <View className="flex-1 relative justify-start items-center  bg-white  ">
@@ -90,9 +89,7 @@ export default function Index() {
         presentationStyle="formSheet"
       >
         <Popup show={ShowDetails} setShow={setShowDetails} />
-      </Modal>
-      <BlurView intensity={30} tint="light" className="absolute inset-0">
-        {" "}
+      </Modal> 
         <Modal
           visible={ShowAdv}
           animationType="fade"
@@ -100,13 +97,10 @@ export default function Index() {
           onRequestClose={() => setShowAdv(false)}
           presentationStyle="formSheet"
         >
-          {" "}
           <View className="w-full h-full flex justify-center items-center ">
-            {" "}
-            <Advertisement show={ShowAdv} setShow={setShowAdv} />{" "}
-          </View>{" "}
-        </Modal>{" "}
-      </BlurView>
+            <Advertisement show={ShowAdv} setShow={setShowAdv} />
+          </View>
+        </Modal> 
     </View>
   );
 }
@@ -160,7 +154,7 @@ const Popup = ({ show, setShow }: PopupProps) => {
         onPress={() => setShow(false)}
       >
         <Text className="font-bold text-[20px] text-[#0C4C7B] ">
-          Choose the Payment Gateway{" "}
+          Choose the Payment Gateway
         </Text>
         <Image source={images.close} className="w-[15px] h-[15px]" />
       </Pressable>
@@ -210,6 +204,9 @@ interface SCardProps {
 }
 const SCards = ({ Icon, service, user }: SCardProps) => {
   return (
+    <Pressable 
+      onPress={() => router.push('./index1')}
+    >
     <View className="bg-white w-[355px] border border-[#0C4C7B0D]  h-[80px] mx-auto rounded-[12px] flex-row justify-start items-center ">
       <View className=" flex-row gap-2  justify-center items-center">
         <Image source={Icon} className="w-[50px] h-[50px]" />
@@ -221,6 +218,7 @@ const SCards = ({ Icon, service, user }: SCardProps) => {
         </View>
       </View>
     </View>
+    </Pressable>
   );
 };
 
@@ -258,3 +256,4 @@ const Advertisement = ({ show, setShow }: ADVProps) => {
     </View>
   );
 };
+

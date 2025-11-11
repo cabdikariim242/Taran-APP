@@ -38,6 +38,9 @@ import TrustWallet from "./trustWallet.png";
 import verified from "./verified.png";
 import whatsapp from "./whatsapp.png";
 import YiksiWallet from "./yikisWallet.png";
+import back from './back.png'
+import warning from './warning.png'
+import QRcode from "@/assets/QRcode.png";
 export const images = {
   profile,
   notification,
@@ -79,4 +82,7 @@ export const images = {
   stableCoin,
   advertisement,
   endclose,
+  back,
+  warning,
+  QRcode,
 };
