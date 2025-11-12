@@ -42,6 +42,7 @@ import back from './back.png'
 import warning from './warning.png'
 import QRcode from "@/assets/QRcode.png";
 import exclamation from "./exclamation.png";
+import TaranLogo from './TaranLogo.png'
 export const images = {
   profile,
   notification,
@@ -87,4 +88,5 @@ export const images = {
   warning,
   QRcode,
   exclamation,
+  TaranLogo,
 };
