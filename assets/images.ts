@@ -43,6 +43,12 @@ import warning from './warning.png'
 import QRcode from "@/assets/QRcode.png";
 import exclamation from "./exclamation.png";
 import TaranLogo from './TaranLogo.png'
+import taranWhiteLogo from './taranWhiteLogo.png'
+import translate from './translate.png'
+import seamless from './seamless.png'
+import Anaasir from './a.naasir.png'
+import add from './add.png'
+import signup from './signup.png'
 export const images = {
   profile,
   notification,
@@ -89,4 +95,10 @@ export const images = {
   QRcode,
   exclamation,
   TaranLogo,
+  taranWhiteLogo,
+  translate,
+  seamless,
+  Anaasir,
+  add,
+  signup,
 };

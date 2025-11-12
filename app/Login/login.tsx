@@ -1,6 +1,5 @@
 // app/Login/login.tsx
-import { images } from "@/assets/images";
-
+import { images } from "@/assets/images"; 
 import { Picker } from "@react-native-picker/picker";
 import { useRouter } from "expo-router";
 import React, { useState } from "react";
@@ -191,8 +190,10 @@ export default function Login() {
                 )}
               </View>
               <View className="flex ">
-                <Text className="text-[#0C4C7B] text-[10px] font-[400]">Terms & Conditions</Text>
-                <Text  className="text-[#5D6166] text-[8px] w-[166px] font-[400]">
+                <Text className="text-[#0C4C7B] text-[10px] font-[400]">
+                  Terms & Conditions
+                </Text>
+                <Text className="text-[#5D6166] text-[8px] w-[166px] font-[400]">
                   By continuing you agree to Taran's Terms of service, and
                   privacy notice
                 </Text>
@@ -207,11 +208,19 @@ export default function Login() {
                 Sign Up
               </Text>
             </Pressable>
+            {/* sign in */}
+            <Pressable   onPress={() => router.push('./Signin')}
+            className="flex flex-row  gap-[4px] justify-center items-center ">
+              <Text className="font-[600] text-[13px] text-[#BAC2CC]  ">
+                Already have an account? 
+              </Text> 
+              <Text className="font-[600] text-[15px] text-[#0C4C7B]  ">
+                Sign In
+              </Text>
+            </Pressable>
           </View>
         </ScrollView>
       </View>
     </View>
   );
 }
-
-// <Button title="Login"  />

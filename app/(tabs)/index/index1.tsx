@@ -146,7 +146,7 @@ const Advertisement = ({ show, setShow }: ADVProps) => {
       </Text>
 
       <Pressable
-      onPress={() => router.push('../index2')}
+      onPress={() => router.push('/Login/login')}
         className="w-[276px] mx-auto h-[48px] bg-[#0C4C7B] rounded-[12px] flex justify-center items-center mt-5"
       >
         <Text className="text-white font-[600] text-[15px]">
